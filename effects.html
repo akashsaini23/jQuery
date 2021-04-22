@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#b3').click(function(){
+                $('.main').show();
+            })
+            $('#b1').click(function(){
+                $('.main').hide();
+            })
+            $('#b2').click(function(){
+                $('.main').toggle();
+            })
+            $('#b4').click(function(){
+                $('.main1').fadeIn(2000);
+            })
+            $('#b5').click(function(){
+                $('.main1').fadeOut(1000);
+            })
+            $('#b6').click(function(){
+                $('.main2').slideDown(2000);
+            })
+            $('#b7').click(function(){
+                $('.main2').slideUp(1000);
+            })
+            $('#a').click(function(){
+                $('.main4').animate({
+                    left: '250px',
+                    opacity: '0.7',
+                    height: '+=150px',
+                    width: '+=150px'                
+                },6000);
+                $('#pa').animate({
+                    left:'200px',
+                    height:'+=100px',
+                    width:'+=110px',
+                    paddingleft:'19px'
+                },3000)
+            })
+            $('#b').click(function(){
+                $('.main4').hide(1000,function(){
+                    alert("This box is hidden");
+                });
+            })
+            $('#c').click(function(){
+                $('.main4').hide(4000);
+                    alert("This box is going to hide");
+            });
+            $('#d').click(function(){
+                $('.main4').css("color","red")
+                .slideUp(1000)
+                .slideDown(1000);
+            })
+        })
+
+
+    </script>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+        .main{
+            display: none;
+            width: 100%;
+            height: 300px;
+            text-align: center;
+            margin: auto;
+            background-color: rgb(123, 182, 184);
+            color: #ffff;
+        }
+        .main2{
+            display: none;
+            width: 100%;
+            height: 300px;
+            text-align: center;
+            margin: auto;
+            background-color: rgb(123, 182, 184);
+            color: #ffff;
+        }
+        .main1{
+            display: none;
+            width: 100%;
+            height: 200px;
+            text-align: center;
+            margin: auto;
+            background-color: rgb(59, 112, 114);
+            color: #ffff;
+        }
+        #b2{
+            text-align: center;
+        }
+        .b4{
+            height: 40px;
+            background-color: cadetblue;
+            color: #fff;
+            text-align: center;
+            padding-top: 10px;
+        }
+        .main4{
+            height: 100px;
+            width: 100px;
+            background-color: rgb(88, 187, 85);
+            position: absolute;
+            top:400px
+
+
+
+        }
+        #pa{
+            background-color: coral;
+            color: #fff;
+            height: 40px;
+            width: 60px;
+            position: absolute;
+            top:400px
+        }
+    </style>
+</head>
+<body>
+     <!---------------------hide/show ----------------------------->
+    <button id="b3">Show Profile</button>
+    <button id="b2">Hide/Show Profile</button>
+   
+    <div class="main">
+       <h1>Profile</h1>
+       <h2>Name:<b>Akash Saini</b></h2>
+       <h3>Email:<b>Saini@gmail.com</b></h3>
+       <h3>Contact:<b>7519898756</b></h3>
+      <button id="b1">hide Profile</button>
+    </div>
+     <!---------------------FadeIn/FadeOut----------------------------->
+    <p id="b4" class="b4">Fade In</p>
+    <div class="main1">
+        <h1>Profile</h1>
+        <h2>Name:<b>Akash Saini</b></h2>
+        <h3>Email:<b>Saini@gmail.com</b></h3>
+        <h3>Contact:<b>7519898756</b></h3>
+        <button id="b5">FadeOut</button>
+     </div>
+     <!---------------------SlideDown/slideUp----------------------------->
+     <p id="b6" class="b4">Slide Down</p>
+     <div class="main2">
+         <h1>Profile</h1>
+         <h2>Name:<b>Akash Saini</b></h2>
+         <h3>Email:<b>Saini@gmail.com</b></h3>
+         <h3>Contact:<b>7519898756</b></h3>
+         <button id="b7">Slide Up</button>
+      </div>
+     <!--------------------Animation----------------------------->
+     <p id="a" class="b4">Animation</p>
+     <div class="main4"></div>
+     <h4 id="pa">Parul</h2>
+        <!--------------callBack------------------------------>
+     <p id="b" class="b4">Callback /hide</p>
+     <div class="main4"></div>
+           <!--------------without callBack------------------------------>
+           <p id="c" class="b4">without Callback /hide</p>
+       <!-------------chaining----------------------->
+       <p id="d" class="b4">Chaining</p>
+
+    
+
+
+</body>
+</html>
